@@ -1,8 +1,11 @@
 import React,{useState, useEffect} from "react";
 import BookShortDescription from "./BookShortDescription";
+import Modal from "./Modal";
 function Home(){
 
-    const[books, setBooks] = useState([]);
+    const [books, setBooks] = useState([]);
+    const [modalOpen, setModalOpen] = useState(false);
+    const [idToRead, setIdToRead] = useState();
 
     useEffect(()=>{
         async function fetchBooks(){
@@ -21,8 +24,9 @@ function Home(){
     return(
         <>
             {
-                books.map((book)=> <BookShortDescription id={book.id} bookName={book.title} setBooks={setBooks}/>)
+                books.map((book)=> <BookShortDescription id={book.id} bookName={book.title} setBooks={setBooks} setIdToRead={setIdToRead} setModalOpen={setModalOpen}/>)
             }
+            <Modal isOpen={modalOpen} toClose={setModalOpen} idToRead={idToRead}/>
         </>
     )
 }

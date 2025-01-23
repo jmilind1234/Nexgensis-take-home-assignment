@@ -1,7 +1,8 @@
 // @ts-nocheck
 import { BookDescription, BookTitle, ButtonHolder } from "../Components-styles/bookShortDesc";
 
-function BookShortDescription({id, bookName, setBooks}){
+function BookShortDescription({id, bookName, setBooks, setIdToRead, setModalOpen}){
+    
     const deleteHandler = async ()=>{
         try {
             const deleteResponse = await fetch(`http://localhost:8000/books/${id}`, {method:'DELETE'});
@@ -17,7 +18,10 @@ function BookShortDescription({id, bookName, setBooks}){
             <BookTitle>{bookName}</BookTitle>
             <ButtonHolder>
                 <button>Update</button>
-                <button>Read more..</button>
+                <button onClick={()=>{
+                    setModalOpen(true);
+                    setIdToRead(id);
+                }}>Read more..</button>
                 <button onClick={deleteHandler}>Delete</button>
             </ButtonHolder>
         </BookDescription>
