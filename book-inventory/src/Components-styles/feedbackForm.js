@@ -65,3 +65,20 @@ export const SubmitButton = styled.input`
     background-color: rgb(245, 101, 101);
   }
 `
+
+export const SubmitButtonNew = styled.button`
+  background-color: rgb(252, 127, 127);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display:block;
+  margin: auto;
+  margin-top: 10px;
+  border: 2px solid black;
+  text-align: center;
+  &:hover {
+    background-color: rgb(245, 101, 101);
+  }
+`
