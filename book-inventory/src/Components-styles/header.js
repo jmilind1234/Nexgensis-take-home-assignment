@@ -17,6 +17,11 @@ export const Links = styled.a`
     font-size: 18px; 
     line-height: 25px;
     border-radius: 4px;
+    @media (max-width: 420px) {
+        float: none;
+        display: block;
+        text-align: left;
+    }
 `;
 
 export const Logo = styled(Links)`
@@ -25,5 +30,8 @@ export const Logo = styled(Links)`
 `
 export const PagesHolder = styled.div`
     float: right;
+    @media (max-width: 420px) {
+        float: none;
+    }
 `
 
