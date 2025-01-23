@@ -6,9 +6,13 @@ function Home(){
 
     useEffect(()=>{
         async function fetchBooks(){
-            const booksResponse = await fetch("http://localhost:8000/books");
-            const booksData = await booksResponse.json();
-            setBooks(booksData);
+            try {
+                const booksResponse = await fetch("http://localhost:8000/books");
+                const booksData = await booksResponse.json();
+                setBooks(booksData);
+            } catch (error) {
+                console.log("Error faced while making fetch books call");
+            }
         };
 
         fetchBooks();
