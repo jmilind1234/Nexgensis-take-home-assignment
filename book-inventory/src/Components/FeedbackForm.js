@@ -76,6 +76,11 @@ function FeedbackForm(){
             alert(fieldErrors.emailError);
         }
     }
+
+    const submitHandler = ()=>{
+        errorAlert();
+        // further process in case of no alert but here not needed as per task
+    }
     
     return(
     <>
@@ -112,7 +117,7 @@ function FeedbackForm(){
                     <InputField type="number" id="age" name="Age" placeholder="Enter you age.." value={fieldValues?.age} onChange={ageChangeHandler} onBlur={ageBlurHandler}/>
                 </FieldHolder>
             </RowHolder>
-        </FormContainer><SubmitButton value="SUBMIT" onClick={errorAlert}/>
+        </FormContainer><SubmitButton value="SUBMIT" onClick={submitHandler}/>
     </> 
     )
 }
