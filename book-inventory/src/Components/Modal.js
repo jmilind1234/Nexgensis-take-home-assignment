@@ -8,11 +8,16 @@ const Modal = ({ isOpen, toClose, idToRead }) => {
 
     useEffect(()=>{
         const fetchDetails = async()=>{
-            const detailResp =await fetch(`http://localhost:8000/books/${idToRead}`);
-            const detailData = await detailResp.json();
-            setAuthor(detailData?.author);
-            setTitle(detailData?.title);
-            setSummary(detailData?.Summary);
+            try {
+                const detailResp =await fetch(`http://localhost:8000/books/${idToRead}`);
+                const detailData = await detailResp.json();
+                setAuthor(detailData?.author);
+                setTitle(detailData?.title);
+                setSummary(detailData?.Summary);
+            } catch (error) {
+                console.log("failed to fetch detail of particular book due to ", error);
+            }
+            
         }
         fetchDetails();
     })
