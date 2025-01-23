@@ -2,9 +2,10 @@ import styled from "styled-components";
 
 export const HeaderContainer = styled.div`
     overflow : hidden;
-    backgound-color: #f1f1f1;
+    background-color:rgb(252, 127, 127);
     padding: 20px 10px;
     border: 1px solid black;
+    border-radius: 5px;
 `;
 
 export const Links = styled.a`
