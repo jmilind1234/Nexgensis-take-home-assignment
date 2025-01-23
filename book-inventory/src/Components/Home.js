@@ -17,10 +17,11 @@ function Home(){
 
         fetchBooks();
     })
+
     return(
         <>
             {
-                books.map((book)=> <BookShortDescription id="" bookName={book.title}/>)
+                books.map((book)=> <BookShortDescription id={book.id} bookName={book.title} setBooks={setBooks}/>)
             }
         </>
     )
