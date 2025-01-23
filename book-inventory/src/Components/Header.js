@@ -8,6 +8,7 @@ function Header(){
                 <Links href="#">Home</Links>
                 <Links href="contact">Contact</Links>
                 <Links href="about">About</Links>
+                <Links href="feedback">Feedback</Links>
             </PagesHolder>
         </HeaderContainer>
     )
